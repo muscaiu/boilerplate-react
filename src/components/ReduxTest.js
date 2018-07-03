@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { action } from '../actions/action';
 
-class App extends Component {
+class ReduxTest extends Component {
 
   simpleAction = (event) => {
     this.props.simpleAction();
@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <pre>
           {
-            JSON.stringify(this.props)
+            JSON.stringify(this.props.reducer)
           }
         </pre>
         <button onClick={this.simpleAction}>Test redux action</button>
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
   simpleAction: () => dispatch(action())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxTest);
